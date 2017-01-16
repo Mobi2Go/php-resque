@@ -151,6 +151,7 @@ class Resque_Worker
 		$this->startup();
 
 		while(true) {
+			pcntl_signal_dispatch();
 			if($this->shutdown) {
 				break;
 			}
